@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CustomLoginPage"
+             xmlns:controls="clr-namespace:CustomLoginPage.Controls;assembly=CustomLoginPage.Android"
+             x:Class="CustomLoginPage.MainPage"
+             BackgroundColor="#0E439C"
+             Padding="20,0,20,0">
+
+    <Grid
+        VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+
+        <!--Company logo and name-->
+        <Grid
+            Grid.Row="0"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+
+        </Grid>
+
+        <!--login panel-->
+        <StackLayout
+            Grid.Row="1"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="StartAndExpand">
+            <Frame
+                HasShadow="False"
+                BackgroundColor="Transparent"
+                Padding="0,0,0,0"
+                HeightRequest="60"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="FillAndExpand">
+                <controls:LoginEntry 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="EndAndExpand"
+                    BackgroundColor="Transparent" 
+                    Placeholder="Domain" 
+                    TextColor="Aqua" 
+                    PlaceholderColor="#50FFFFFF"/>
+            </Frame>
+
+            <Frame
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="EndAndExpand"
+                Padding="0,0,0,0"
+                HasShadow="False"
+                HeightRequest="60"
+                BackgroundColor="Transparent">
+                <controls:LoginEntry 
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="EndAndExpand"
+                    BackgroundColor="Transparent" 
+                    Placeholder="User Name" 
+                    TextColor="Aqua" 
+                    PlaceholderColor="#50FFFFFF"/>
+            </Frame>
+
+            <Grid
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="EndAndExpand"
+                Padding="0,0,0,0"
+                HeightRequest="60"
+                BackgroundColor="Transparent">
+                <controls:LoginEntry 
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="EndAndExpand"
+                    BackgroundColor="Transparent" 
+                    IsPassword="True"
+                    Placeholder="Password" 
+                    TextColor="Aqua" 
+                    PlaceholderColor="#50FFFFFF"/>
+                <controls:ClickableImage 
+                    HorizontalOptions="End" 
+                    VerticalOptions="End"
+                    Command="{Binding }"
+                    ToggledImage="ic_eye_invisible.png"
+                    Source="ic_eye.png" 
+                    Margin="0,0,10,12.1"/>
+            </Grid>
+            <Label 
+                VerticalOptions="Start"
+                Text="Pasword is incorrect" 
+                TextColor="Red" 
+                FontSize="12" 
+                Margin="10,-10,0,0"
+                    />
+            <Button 
+                HeightRequest="60"
+                Command="{Binding }"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="Fuchsia"
+                TextColor="White"
+                Text="Login"
+                />
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>
